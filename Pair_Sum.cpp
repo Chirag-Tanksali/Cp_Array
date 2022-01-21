@@ -1,6 +1,6 @@
 // You are given an integer array 'ARR' of size 'N' and an integer 'S'. Your task is to return the list of all pairs of elements such that each sum of elements of each pair equals 'S'.
 // Note:
-// Each pair should be sorted i.e the first value should be less than or equals to the second value. 
+// Each pair should be sorted i.e the first value should be less than or equals to the second value.
 
 // Return the list of pairs sorted in non-decreasing order of their first value. In case if two pairs have the same first value, the pair with a smaller second value should come first.
 // Input Format:
@@ -39,21 +39,26 @@
 
 using namespace std;
 
-int main(){
-        int n,s;
-        cin>>n>>s;
-        int a[100];
-        for(int i=0;i<n;i++){
-            cin>>a[i];
+int main()
+{
+    int n, s;
+    cin >> n >> s;
+    int a[100];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j = j + 2)
+        {
+            if (a[i] + a[j] == s)
+            {
+                cout << a[i] << a[j] << endl;
+                // cout<<"Hello"<<endl;
+            }
         }
-        
-        for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j=j+2){
-                if(a[i]+a[j]==s){
-                    cout<<a[i]<<a[j]<<endl;  
-                    // cout<<"Hello"<<endl;
-                }
-            } 
-          }
+    }
     return 0;
 }
